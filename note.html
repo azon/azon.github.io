@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>CentOS 6 Remark</title>
+<!-- 2014-04-04 五 11:35 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="azon" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CentOS 6 Remark</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 透過 USB flash drive 來安裝 CentOS (適用 CentOS 6.5+) <span class="timestamp-wrapper"><span class="timestamp">[2014-03-09 日]</span></span></a></li>
+<li><a href="#sec-2">2. Third Party Repositories(第3方套件庫) <span class="timestamp-wrapper"><span class="timestamp">[2014-03-16 日]</span></span></a>
+<ul>
+<li><a href="#sec-2-1">2.1. Installing</a>
+<ul>
+<li><a href="#sec-2-1-1">2.1.1. 確認目前 CentOS 版本與 CPU 架構</a></li>
+<li><a href="#sec-2-1-2">2.1.2. Installing RPMforge</a></li>
+<li><a href="#sec-2-1-3">2.1.3. Installing EPEL(Extra Packages for Enterprise Linux)</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">2.2. Removing</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1. Removing Extra Packages for Enterprise Linux(EPEL)</a></li>
+<li><a href="#sec-2-2-2">2.2.2. Removing RPMforge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Mounting an NTFS filesystem on CentOS <span class="timestamp-wrapper"><span class="timestamp">[2014-03-16 日]</span></span></a>
+<ul>
+<li><a href="#sec-3-1">3.1. Installing required packages</a></li>
+<li><a href="#sec-3-2">3.2. Mounting an NTFS filesystem</a></li>
+<li><a href="#sec-3-3">3.3. References:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. How to open RAR files in CentOS</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Installing required package</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. 安裝 Transmission <span class="timestamp-wrapper"><span class="timestamp">[2014-03-29 六]</span></span></a>
+<ul>
+<li><a href="#sec-5-1">5.1. 安裝</a></li>
+<li><a href="#sec-5-2">5.2. 設定</a>
+<ul>
+<li><a href="#sec-5-2-1">5.2.1. Creating Download and Incomplete Directory</a></li>
+<li><a href="#sec-5-2-2">5.2.2. Editing Configuration Files</a></li>
+<li><a href="#sec-5-2-3">5.2.3. Editing Firewall</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-3">5.3. 啟動與關閉 Transmission</a>
+<ul>
+<li><a href="#sec-5-3-1">5.3.1. 啟動 Trnasmission</a></li>
+<li><a href="#sec-5-3-2">5.3.2. 關閉 Transmission</a></li>
+<li><a href="#sec-5-3-3">5.3.3. 重新啟動 Transmission</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-4">5.4. 登入</a></li>
+<li><a href="#sec-5-5">5.5. Reference</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. 安裝 JDownloader <span class="timestamp-wrapper"><span class="timestamp">[2014-03-30 日]</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 透過 USB flash drive 來安裝 CentOS (適用 CentOS 6.5+) <span class="timestamp-wrapper"><span class="timestamp">[2014-03-09 日]</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+找一台有安裝 Linux 作業系統的電腦, 下載 CentOS DVD 映像檔<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>. 你只須 DVD1 就能完成安裝, DVD2 內只包含附加的 RPM，你可以按需要在日後安裝它們。
+安裝程式在安裝時不會徵用 DVD2<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>. <br  />
+</p>
+
+<p>
+在此我們假設下載的版本是 CentOS x86_64. 下載完後 cd 到下載目錄. <br  />
+</p>
+
+<p>
+接著, 插入 USB flash drive (建議用 USB3.0 同時讀速最好有 30MB +), 並用指令 fdisk 來確認 USB flash drive 位置.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>[root@centos ~]# fdisk -l
+</pre>
+</div>
+
+<p>
+在此假設查詢到的位置是 /dev/sdb
+</p>
+
+<p>
+最後執行下列指令 <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup> 來製作 bootable USB flash drive.<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>[root@centos ~]# dd <span style="color: #4eee94;">if</span>=CentOS-6.5-x86_64-bin-DVD1.iso <span style="color: #4eee94;">of</span>=/dev/sdb
+</pre>
+</div>
+
+<p>
+其作業時間視 USB flash drive 的寫速決定.<br  />
+</p>
+
+<p>
+完成就可以用該 USB flash drive 來安裝 CentOS. 安裝前記得調整開機裝置順序, 選取 hard disk (or USB HDD) 為第一順位. 
+進入安裝後, 當詢問資料來源時, 指向對應的 USB flash drive 即可. 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Third Party Repositories(第3方套件庫) <span class="timestamp-wrapper"><span class="timestamp">[2014-03-16 日]</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Installing</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+為了取得更多的軟體, CentOS 要安裝額外的 package. 這裡只是記錄安裝和移除的方法, 其他的設定之後用到在紀錄. 另外, 可以參考 <a href="http://wiki.centos.org/AdditionalResources/Repositories">這裡</a> 來取得更多的 repository.<br  />
+  <b>注意! 請先行安裝 RPMforge 再安裝 EPEL</b> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>
+</p>
+</div>
+
+<div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> 確認目前 CentOS 版本與 CPU 架構</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>[root@centos ~]# cat /etc/redhat-release
+<span class="linenr">2: </span>CentOS release 6.5(Final)
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>[root@centos ~]# uname -i
+<span class="linenr">5: </span>i386
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2"><span class="section-number-4">2.1.2</span> Installing RPMforge</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ol class="org-ol">
+<li>Download the rpmforge-release package <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>. (下載 RPMForge 最新 release 的 RPM 檔案)
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ cd /etc/yum.repos.d
+<span class="linenr">2: </span>$ sudo wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+</pre>
+</div>
+</li>
+
+<li>Install RPMforge's GPG key. (安裝 RPMforge 釋出的數位簽章)
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
+</pre>
+</div>
+
+<p>
+If you get an error message like the following the key has already been imported.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">error: http//apt.sw.be/RPM-GPG-KEY.dag.txt: key l import failed.
+</pre>
+</div>
+</li>
+
+<li>Verify the package you have downloaded. (驗證 RPM 檔案的簽章資訊是否與系統內的簽章相符(前一步安裝的簽章))
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm -K rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+</pre>
+</div>
+</li>
+
+<li>Install the package
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm -i rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+</pre>
+</div>
+</li>
+
+<li>完成後, 可以用下列指令來檢查是否安裝成功
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum repolist
+</pre>
+</div>
+
+<p>
+如果有看到 rpmforge 就代表成功了 :)
+</p>
+</li>
+</ol>
+
+<p>
+參考資料
+</p>
+<ul class="org-ul">
+<li><a href="http://wiki.centos.org/AdditionalResources/Repositories/RPMForge">Installing RPMforge</a>
+</li>
+<li><a href="http://yuanfarn.blogspot.tw/2013/09/centos.html">CentOS 的第三方套件庫</a>
+</li>
+<li><a href="http://note.drx.tw/2013/09/working-with-linux-05-reopsiroty-and-mirror.html">套件庫及鏡像站</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3"><span class="section-number-4">2.1.3</span> Installing EPEL<a id="Installing-EPEL" name="Installing-EPEL"></a>(Extra Packages for Enterprise Linux)</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ol class="org-ol">
+<li>Download the epel-release package <sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup> .
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ cd /etc/yum.repos.d
+<span class="linenr">2: </span>$ sudo wget http://mirror01.idc.hinet.net/EPEL/6/i386/epel-release-6-8.noarch.rpm
+</pre>
+</div>
+</li>
+
+<li>Installing EPEL's GPG key.
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm --import https://fedoraproject.org/static/0608B895.txt
+</pre>
+</div>
+</li>
+
+<li>Veryfy the package you have downloaded.
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm -K epel-release-6-8.noarch.rpm
+</pre>
+</div>
+</li>
+
+<li>Install the package.
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo rpm -i epel-release-6-8.noarch.rpm
+</pre>
+</div>
+</li>
+
+<li>完成後, 可以用下列指令來檢查是否安裝成功
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum repolist
+</pre>
+</div>
+
+<p>
+如果有看到 epel 就代表成功了 :)
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Removing</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> Removing Extra Packages for Enterprise Linux(EPEL)</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+<b>未試過</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum remove rpmforge-release
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> Removing RPMforge</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+<b>未試過</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum remove epel-release
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Mounting an NTFS filesystem on CentOS <span class="timestamp-wrapper"><span class="timestamp">[2014-03-16 日]</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Installing required packages</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+For <b>CentOS-6</b> the <b>EPEL</b> repository is carrying later NTFS packages. 
+To install EPEL(-&gt; <a href="#Installing-EPEL">2.1.3</a> Installing EPEL)
+</p>
+
+<p>
+Installing ntfs-3g
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum install ntfs-3g
+</pre>
+</div>
+
+<p>
+You may also want to 
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum install ntfsprogs ntfsprogs-gnomevfs
+</pre>
+</div>
+
+<p>
+for additional functionality.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Mounting an NTFS filesystem</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Using fdisk to find your nfts filesystem
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ fdisk -l
+</pre>
+</div>
+
+<p>
+Suppose ntfs filesystem is /dev/sdc and you are going to mount it on 
+/mnt/win, do the following
+</p>
+
+<p>
+First, create a mount point
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo mkdir -p /mnt/win
+</pre>
+</div>
+
+<p>
+Next, <b>edit</b> /etc/fstab as follows.<br  />
+</p>
+
+<p>
+To mount read-only:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo /dev/sdc /mnt/win ntfs-3g ro,<span style="color: #4eee94;">umask</span>=0222,defaults 0 0
+</pre>
+</div>
+
+<p>
+To mount read-write:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo /dev/sdc /mnt/win ntfs-3g rw,<span style="color: #4eee94;">umask</span>=0000,defaults 0 0
+</pre>
+</div>
+
+<p>
+You can now mount it by running:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo mount /mnt/win
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> References:</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<a href="http://wiki.centos.org/TipsAndTricks/NTFS">How to Mount an NTFS Filesystem</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> How to open RAR files in CentOS</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Installing required package</h3>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 安裝 Transmission <span class="timestamp-wrapper"><span class="timestamp">[2014-03-29 六]</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Website: <a href="http://www.transmissionbt.com/">http://www.transmissionbt.com/</a> <br  />
+  version: 2.76
+</p>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> 安裝</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+連接到 <a href="http://www.transmissionbt.com/download/">Transmission</a> 官網, 點擊 CentOS 圖示下的 <a href="http://geekery.blog.com/category/linux/transmission-rpms/">Contrlb Packages</a> 連結到另一個網站 Geekery, 網站提供了現成的 repo 檔,  可以讓我們方便的安裝 Transmission.
+</p>
+
+<p>
+所以, 先下載 Greekery 提供的 repo 檔案.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ cd /etc/yum.repos.d/
+<span class="linenr">2: </span>$ sudo wget http://geekery.altervista.org/geekery-el6-i686.repo
+</pre>
+</div>
+
+<p>
+接著, 安裝 Transmission
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo yum install transmission
+</pre>
+</div>
+
+<p>
+當 yum 詢問 GPG key 時, 輸入 y 
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID a4673575
+<span class="linenr">2: </span>geekery/gpgkey                                                                                                                   | 1.3 kB     00:00
+<span class="linenr">3: </span>Importing GPG key 0xA4673575 <span style="color: #deb887;">"Marco Spallacci <a href="mailto:marco.spallacci%40gmail.com">&lt;marco.spallacci@gmail.com&gt;</a>"</span> from http://geekery.altervista.org/download.php?<span style="color: #4eee94;">filename</span>=GEEKERY-GPG-KEY
+<span class="linenr">4: </span>Is this ok [y/N]: y
+</pre>
+</div>
+
+<p>
+雖然不是很了解, 但這和之前安裝 RPMforge 的方式不同. RPMforge 的安裝是下載 rpm 檔與 GPG key 後, 驗證再安裝. 完成後會在 /etc/yum.repos.d 下出現 RPMforge 的 repo 檔. 
+而這裡的方式卻直接下載 repo 檔, 有時間應該要搞清楚 rpm 與 repo 的關係.
+</p>
+
+<p>
+啟動 Transmission, 自動產生設定檔 (settings.json)<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span class="linenr">1: </span>$ sudo service transmission-daemon start
+</pre>
+</div>
+
+<p>
+PS.<br  />
+</p>
+<ol class="org-ol">
+<li>daemon 代表提供服務的程式.
+</li>
+<li>service 用來啟動 daemon 的 script
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> 設定</h3>
+<div class="outline-text-3" id="text-5-2">
+</div><div id="outline-container-sec-5-2-1" class="outline-4">
+<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> Creating Download and Incomplete Directory</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<p>
+建立完成檔案資料夾並指定使用者與群組
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo mkdir -p /home/transmission/Downloads
+$ sudo chown transmission:transmission /home/transmission/Downloads
+</pre>
+</div>
+
+<p>
+建立未完成檔案資料夾並使用者與群組
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo mkdir -p /home/transmission/Incompletes
+$ suod chown transmission:transmission /home/transmission/Incompletes
+</pre>
+</div>
+
+<p>
+在這裡要設定使用者與群組的原因在於 Transmission 的下載檔案使用者與群組皆為 transmission, 如果不指定為 transmission, 檔案會因為權限無法存放在指定的資料夾.
+</p>
+
+<p>
+PS. <br  />
+    雖然我是用 root 啟動 Transmission, 但 Transmission 的下載檔案的使用者與群組仍為 transmission, 而不是 root. 我在想, 也許程式本身可以視為一個使用者, 而 root 來啟動
+也許是因為只有 root 才可以啟動 daemon 吧??
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-2-2" class="outline-4">
+<h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span> Editing Configuration Files</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<p>
+使用 service 停止 Transmission
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service transmission-deamon stop
+$ sudo killall transmission-deamon
+</pre>
+</div>
+
+<p>
+使用 locate 來尋找 Transmission 的設定檔位址
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ locate settings.json
+</pre>
+</div>
+
+<p>
+開啟設定檔
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo vi /var/lib/transmission/settings.json
+</pre>
+</div>
+
+<p>
+設定檔內容如下, 需要設定的參數都有註解註明. 有一點要注意的是, 每次打開設定檔, Web Interface 的登入密碼都會被修改成亂碼, 須重新設定.
+</p>
+<div class="org-src-container">
+
+<pre class="src src--n">"alt-speed-down": 50, 
+"alt-speed-enabled": false, 
+"alt-speed-time-begin": 540, 
+"alt-speed-time-day": 127, 
+"alt-speed-time-enabled": false, 
+"alt-speed-time-end": 1020, 
+"alt-speed-up": 50, 
+"bind-address-ipv4": "0.0.0.0", 
+"bind-address-ipv6": "::", 
+"blocklist-enabled": false, 
+"blocklist-updates-enabled": true, 
+"blocklist-url": "http://www.example.com/blocklist", 
+"cache-size-mb": 4, 
+"compact-view": false, 
+"dht-enabled": true, 
+"download-dir": "/home/transmission/Downloads",                       /* 儲存完成檔案資料夾 */
+"download-queue-enabled": true, 
+"download-queue-size": 5, 
+"encryption": 1, 
+"idle-seeding-limit": 30, 
+"idle-seeding-limit-enabled": false, 
+"incomplete-dir": "/home/transmission/Incompletes",                   /* 儲存未完成檔案資料夾 */
+"incomplete-dir-enabled": false,                                      /* 未完成檔案資料夾選項. true: 啟用, false: 未完成檔案匯放在完成檔案資料夾 */
+"inhibit-desktop-hibernation": false, 
+"lpd-enabled": false, 
+"main-window-height": 500, 
+"main-window-is-maximized": 0, 
+"main-window-width": 560, 
+"main-window-x": 275, 
+"main-window-y": 285, 
+"message-level": 2, 
+"open-dialog-dir": "/home/transmission", 
+"peer-congestion-algorithm": "", 
+"peer-limit-global": 240,                                             /* 全局種子最大連接數 */
+"peer-limit-per-torrent": 60,                                         /* 單一種子最大連接數 */
+"peer-port": 51413,                                                   /* Transmission 的使用 port */ 
+"peer-port-random-high": 65535, 
+"peer-port-random-low": 49152, 
+"peer-port-random-on-start": false, 
+"peer-socket-tos": "default", 
+"pex-enabled": true, 
+"port-forwarding-enabled": true, 
+"preallocation": 1, 
+"prefetch-enabled": 1, 
+"queue-stalled-enabled": true, 
+"queue-stalled-minutes": 30, 
+"ratio-limit": 2,                                                     /* 上下載比例限制, 達成後停止做種 */
+"ratio-limit-enabled": true,                                          /* 上下載比例限制選項. true: 開啟, false: 關閉 */
+"rename-partial-files": true, 
+"rpc-authentication-required": true,                                  /* Web Interface 使用者認證模式選項. true: 開啟, false: 關閉 */
+"rpc-bind-address": "0.0.0.0", 
+"rpc-enabled": true,                                                  /* Web Interface. true: 開啟, false: 關閉 */
+"rpc-password": "{8414ccb9462b9ff100ec8eb288a9eba38cbc77a7h20af30z",  /* Web Interface 使用者登入密碼 */
+"rpc-port": 9091,                                                     /* Web Interface 使用 port */
+"rpc-url": "/transmission/", 
+"rpc-username": "user",                                               /* Web Interface 使用者登入帳號 */
+"rpc-whitelist": "127.0.0.1",                                         /* 指定可連線的 IP 位置，以,區隔*/
+"rpc-whitelist-enabled": true,                                        /* IP 認證模式選項. true: 開啟, false: 關閉 */
+"scrape-paused-torrents-enabled": true, 
+"script-torrent-done-enabled": false, 
+"script-torrent-done-filename": "", 
+"seed-queue-enabled": false, 
+"seed-queue-size": 10, 
+"show-backup-trackers": false, 
+"show-extra-peer-details": false, 
+"show-filterbar": true, 
+"show-notification-area-icon": false, 
+"show-options-window": true, 
+"show-statusbar": true, 
+"show-toolbar": true, 
+"show-tracker-scrapes": false, 
+"sort-mode": "sort-by-name", 
+"sort-reversed": false, 
+"speed-limit-down": 100,                                              /* 下載速度限制, 單位 KB/Sec */
+"speed-limit-down-enabled": false,                                    /* 下載速度限制選項. true: 開啟, false: 關閉 */
+"speed-limit-up": 100,                                                /* 上載速度限制, 單位 KB/Sec */
+"speed-limit-up-enabled": false,                                      /* 上載速度限制選項. true: 開啟, false: 關閉 */
+"start-added-torrents": true, 
+"statusbar-stats": "total-ratio", 
+"torrent-added-notification-enabled": true, 
+"torrent-complete-notification-enabled": true, 
+"torrent-complete-sound-command": "canberra-gtk-play -i complete-download -d 'transmission torrent downloaded'", 
+"torrent-complete-sound-enabled": true, 
+"trash-can-enabled": true, 
+"trash-original-torrent-files": false, 
+"umask": 0,                                                           /* 預設為 18, 改為 0 可以讓完成檔案權限為 777 */      
+"upload-slots-per-torrent": 14,                                       /* 種子上傳連接數 */
+"user-has-given-informed-consent": true, 
+"utp-enabled": true, 
+"watch-dir": "/home/transmission/Downloads", 
+"watch-dir-enabled": false
+</pre>
+</div>
+
+<p>
+關於更詳細的設定可以參考 <a href="https://trac.transmissionbt.com/wiki/EditConfigFiles">這裡</a> .
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-2-3" class="outline-4">
+<h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span> Editing Firewall</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<p>
+關閉 IPv4 防火牆, 以 vi 開啟 IPv4 防火牆設定檔
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service iptables stop
+$ sudo vi /etc/sysconfig/iptables
+</pre>
+</div>
+
+<p>
+在設定檔中開啟 Transmission 的 port <a id="transmission:ipv4" name="transmission:ipv4"></a>, 下列新增的 port 都是 Transmission 的 預設值.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">-A INPUT -p tcp -m tcp --dport 9091 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 51413 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 49153:65534 -j ACCEPT
+</pre>
+</div>
+
+<p>
+存檔退出並重新開啟 IPv4 防火牆
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service iptables start
+</pre>
+</div>
+
+<p>
+IPv6 的防火牆也可同時設定, 步驟與參數跟 IPv4 相同
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service ip6tables stop
+$ sudo vi /etc/sysconfig/ip6tables
+</pre>
+</div>
+
+<p>
+在設定檔中加入下列參數(-&gt; <a href="#transmission:ipv4">5.2.3</a> Transmission:ipv4設定)後, 存檔並啟動 IPv6 防火牆
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service ip6tables start
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> 啟動與關閉 Transmission</h3>
+<div class="outline-text-3" id="text-5-3">
+</div><div id="outline-container-sec-5-3-1" class="outline-4">
+<h4 id="sec-5-3-1"><span class="section-number-4">5.3.1</span> 啟動 Trnasmission</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service trasnmission-daemon start
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-3-2" class="outline-4">
+<h4 id="sec-5-3-2"><span class="section-number-4">5.3.2</span> 關閉 Transmission</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service transmission-daemon stop
+$ sudo killall transmission-daemon
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-3-3" class="outline-4">
+<h4 id="sec-5-3-3"><span class="section-number-4">5.3.3</span> 重新啟動 Transmission</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo service transmission-daemon restart
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> 登入</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+遠端登入是用瀏覽器網址輸入 IP:9091 (or 域名:9091), 本機則是 localhost:9091. 如果是使用 DHCP 上網, 則可以登入進設備(Ex: 無線AP), 讓系統每次拿到的 IP 都是同一組 :)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Reference</h3>
+<div class="outline-text-3" id="text-5-5">
+<ol class="org-ol">
+<li><a href="http://www.cnblogs.com/whseay/">无解</a>: <a href="http://www.cnblogs.com/whseay/p/3384933.html">CentOS 6.4 安装 Transmission 2.76</a>
+</li>
+<li><a href="http://520.be/">LoSt-HeaRT</a>: <a href="http://520.be/1452-%E5%9C%A8vps%E4%B8%8A%E5%AE%89%E8%A3%9Dbt%E8%BB%9F%E9%AB%94transmission.html">在VPS上安裝BT軟體Transmission</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 安裝 JDownloader <span class="timestamp-wrapper"><span class="timestamp">[2014-03-30 日]</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Website: <a href="http://jdownloader.org/">http://jdownloader.org/</a> <br  />
+  version: 0.9.581
+</p>
+
+<p>
+首先, 建立先用 wget 下載官網提供的腳本檔案(js.sh), 存放的地方任你選.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ wget -c http://installer.jdownloader.org/jd_unix_0_9.sh
+</pre>
+</div>
+
+<p>
+賦予腳本檔執行權限
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ chomd +x jd.sh
+</pre>
+</div>
+
+<p>
+執行腳本檔. 執行後會開始安裝程式，裝完就可以使用了 :)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ start jd.sh
+</pre>
+</div>
+
+<p>
+參考資料
+</p>
+<ol class="org-ol">
+<li><a href="http://jdownloader.org/">JDOWNLOADER</a> - <a href="http://jdownloader.org/download/index">Download</a>
+</li>
+<li><a href="http://playubuntu.blogspot.tw/">手把手玩Linux</a> - <a href="http://playubuntu.blogspot.tw/2010/01/jdwonloader.html">好用的跨平台下載軟體 – JDownloader</a>
+</li>
+</ol>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+下載網址:  <a href="http://isoredirect.centos.org/centos/6/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso">http://isoredirect.centos.org/centos/6/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+請見 <a href="http://wiki.centos.org/zh-tw/Manuals/ReleaseNotes/CentOS6.5">CentOS 6.5 發行注記 - 3.安裝媒體及其 sha1sum</a> or 這篇 <a href="http://mirrors.xmission.com/centos/6.5/isos/i386/README.txt">What images are in this directory</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+指令來自 <a href="http://wiki.centos.org/zh-tw/HowTos/InstallFromUSBkey">CentOS Wiki</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+資料來源 <a href="http://note.drx.tw/2013/09/working-with-linux-05-reopsiroty-and-mirror.html">凍仁的筆記</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+You can find a complete listing of RPMforge package packages at <a href="http://packages.sw.be/">http://packages.sw.be/</a> .
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+You can find a complete listing of EPEL at <a href="http://mirrors.fedoraproject.org/publiclist/EPEL/">Fedora EPEL Public Active Mirrors</a>.
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: azon</p>
+<p class="date">Created: 2014-04-04 五 11:35</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
