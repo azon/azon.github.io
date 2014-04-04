@@ -7,12 +7,19 @@ categories: jekyll update
 
 Hello Taiwan
 
-{% hightlight csharp %}
+{% highlight csharp %}
 
 using System;
 namespace Example
 {
-
+    //Hello.cs
+    public class Hello
+	{
+	    public static void Main()
+        {
+		    System.Console.WriteLine("Hello, Taiwan!");
+	    }
+    }
 }
 
-{% endhilight %}
+{% endhighlight %}
