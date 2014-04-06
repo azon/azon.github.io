@@ -2,14 +2,14 @@
 layout: post
 title: "安裝 CentOS 6.5"
 date: 2014-04-06 15:30:00
-categories: CentOS
+categories: jekyll update
 ---
 
 # 透過 USB flash drive 來安裝 CentOS (適用 CentOS 6.5+) 
   找一台有安裝 Linux 作業系統的電腦, 下載 [CentOS DVD 映像檔][fn:2]. 你只須 DVD1 就能完成安裝, DVD2 內只包含附加的 RPM，你可以按需要在日後安裝它們。
   安裝程式在安裝時不會徵用 [DVD2][fn:3]. 
 
-  在此我們假設下載的版本是 CentOS x86_64. 下載完後 cd 到下載目錄. 
+  在此我們假設下載的版本是 CentOS x86\_64. 下載完後 cd 到下載目錄. 
 
   接著, 插入 USB flash drive (建議用 USB3.0 同時讀速最好有 30MB +), 並用指令 fdisk 來確認 USB flash drive 位置.
 
@@ -25,7 +25,7 @@ categories: CentOS
 
   {% highlight shell %}
   
-  # dd if=CentOS-6.5-x86_64-bin-DVD1.iso of=/dev/sdb
+  # dd if=CentOS-6.5-x86\_64-bin-DVD1.iso of=/dev/sdb
 	
   {% endhighlight %}
      
@@ -36,4 +36,6 @@ categories: CentOS
 
   [fn:1] 指令來自 http://wiki.centos.org/zh-tw/HowTos/InstallFromUSBkey
 
-  [fn:2] 下載網址:  http://isoredirect.centos.org/centos/6/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso
+  [fn:2] 下載網址: http://isoredirect.centos.org/centos/6/isos/x86\_64/CentOS-6.5-x86\_64-bin-DVD1.iso
+
+  [fn:3] 請見 [[http://wiki.centos.org/zh-tw/Manuals/ReleaseNotes/CentOS6.5][CentOS 6.5 發行注記 - 3.安裝媒體及其 sha1sum]] or 這篇 [[http://mirrors.xmission.com/centos/6.5/isos/i386/README.txt][What images are in this directory]]
