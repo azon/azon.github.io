@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "安裝 CentOS 6.5"
-date: 2014-04-06 15:30:00
+title: "Install CentOS 6.5"
+date: 2014-04-06 15:30:01
 categories: jekyll update
 ---
 
-# 透過 USB flash drive 來安裝 CentOS (適用 CentOS 6.5+) 
+  透過 USB flash drive 來安裝 CentOS (適用 CentOS 6.5+)
+  
   找一台有安裝 Linux 作業系統的電腦, 下載 [CentOS DVD 映像檔][fn:2]. 你只須 DVD1 就能完成安裝, DVD2 內只包含附加的 RPM，你可以按需要在日後安裝它們。
   安裝程式在安裝時不會徵用 [DVD2][fn:3]. 
 
